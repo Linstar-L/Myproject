@@ -1,0 +1,26 @@
+{% extends "accounts/account_form.html" %}
+{% load i18n %}
+{% block meta_title %}{{ title }}{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block body_id %}account{% endblock %}
+
+{% block breadcrumb_menu %}
+{{ block.super }}
+<li>{{ title }}</li>
+{% endblock %}
+{% block main %}
+
+{% if request.user.is_authenticated %}
+    <p>{% trans "You're already logged in. If you'd like to create a new account, you'll need to log out first." %}</p>
+{% else %}
+    {{ block.super }}
+    {% if settings.ACCOUNTS_APPROVAL_REQUIRED %}
+    <p>{% trans "会员申请提交成功，您可以在申请状态中查看会员是否被激活" %}</p>
+    {% elif settings.ACCOUNTS_VERIFICATION_REQUIRED %}
+    <p>{% trans "After signing up, you'll receive an email with a link you need to click, in order to activate your account." %}</p>
+    {% endif %}
+{% endif %}
+
+{% endblock %}
+
+

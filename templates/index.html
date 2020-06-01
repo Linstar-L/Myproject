@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% load i18n  mezzanine_tags staticfiles%}
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+{% block breadcrumb_wrapper %}
+{% endblock %}
+
+{% block title_wrapper %}
+{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+
+{% block all_content %}
+<section id="{% block section_id %}featured{% endblock %}">
+{% block left_wrapper %}
+{% endblock %}
+
+<hr style="border:none;border-top-width:30px;border-top-style:solid;border-top-color:#252525;" /> <!--装饰一条水平线-->
+{% block main_wrapper %}
+<div class="col-md-{% block main_col_size %}none{% endblock %} {% block main_class %}{% endblock %}">
+{% block main %}
+
+
+<!-- start slider -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+	<!-- Slider -->
+        <div id="main-slider" class="flexslider">
+            <ul class="slides">
+              <li>
+                <img src="{% static "img/slides/1.jpg" %}" alt="" />
+                <div class="flex-caption">
+                    <h3>欢迎进入学术会议网站</h3>
+					<p>Academic conference</p>
+					<a href="#" class="btn btn-theme">Learn More</a>
+                </div>
+              </li>
+              <li>
+                <img src="{% static "img/slides/2.jpg" %}" alt="" />
+                <div class="flex-caption">
+                    <h3>交流与合作</h3>
+					<p>communication & cooperation</p>
+					<a href="#" class="btn btn-theme">Learn More</a>
+                </div>
+              </li>
+              <li>
+                <img src="{% static "img/slides/3.jpg" %}" alt="" />
+                <div class="flex-caption">
+                    <h3>交流与合作</h3>
+					<p>communication & cooperation</p>
+					<a href="#" class="btn btn-theme">Learn More</a>
+                </div>
+              </li>
+            </ul>
+        </div>
+	<!-- end slider -->
+			</div>
+		</div>
+	</div>	
+</div>
+{% endblock %}
+
+{% endblock %}
+{% block right_wrapper %}
+{% endblock %}
+
+</section>
+<section class="callaction">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="big-cta">
+					<div class="cta-text">
+						<h2><span>Academic</span> conference </h2>
+								<div class="col-md-{% block right_col_size %}3{% endblock %} {% block right_class %}right{% endblock %}">
+									{% nevercache %}
+									{% include "includes/user_panel.html" %}
+									{% endnevercache %}
+
+								</div>
+						<!--<br><a href="http://www.baidu.com"><font size="4" >上海大学图书馆</font></a></br>
+						<br><a href="http://www.baidu.com"><font size="4" >上海大学理学院</font></a></br>
+						<br><a href="http://www.baidu.com"><font size="4" >上海大学数学系</font></a></br>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--<section id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="box">
+							<div class="box-gray aligncenter">
+								<h4>Fully responsive</h4>
+								<div class="icon">
+								<i class="fa fa-desktop fa-3x"></i>
+								</div>
+								<p class="">
+								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+								</p>
+									
+							</div>
+							<div class="box-bottom">
+								<a href="#">Learn more</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="box">
+							<div class="box-gray aligncenter">
+								<h4>Modern Style</h4>
+								<div class="icon">
+								<i class="fa fa-pagelines fa-3x"></i>
+								</div>
+								<p>
+								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+								</p>
+									
+							</div>
+							<div class="box-bottom">
+								<a href="#">Learn more</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="box">
+							<div class="box-gray aligncenter">
+								<h4>Customizable</h4>
+								<div class="icon">
+								<i class="fa fa-edit fa-3x"></i>
+								</div>
+								<p>
+								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+								</p>
+									
+							</div>
+							<div class="box-bottom">
+								<a href="#">Learn more</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="box">
+							<div class="box-gray aligncenter">
+								<h4>Valid HTML5</h4>
+								<div class="icon">
+								<i class="fa fa-code fa-3x"></i>
+								</div>
+								<p>
+								 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+								</p>
+									
+							</div>
+							<div class="box-bottom">
+								<a href="#">Learn more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!-- divider -->
+		<!--<div class="row">
+			<div class="col-lg-12">
+				<div class="solidline">
+				</div>
+			</div>
+		</div>-->
+		<!-- end divider -->
+
+
+{% endblock %}

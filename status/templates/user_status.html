@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags %}
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+{% block main %}
+    <meta charset="UTF-8">
+    <title>会员申请状态查询</title>
+    <div style="width:100%;text-align:center">
+        <div class="page-header" style="padding-top:80px;">
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form" method="post" action="/status_action">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input name="phone" type="text" placeholder="输入手机号" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">查询</button>
+                    <font color="#a40b0b">
+                        <br>{{ hint }}     <!-- 用于显示申请状态  -->
+                    </font>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,2 @@
+django
+Mezzanine==4.3.1

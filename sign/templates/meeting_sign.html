@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags %}
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+{% block main %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <div class="page-header" style="padding-top:80px;">
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form" method="post" action="/sign_action">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <p><input name="name" type="text" placeholder="输入姓名" class="form-control"></p>
+                        <p><input name="phone" type="text" placeholder="输入手机号" class="form-control"></p>
+                    </div>
+                    <p><button type="submit" class="btn btn-success">签到</button></p>
+                    <font color="#a40b0b">                 <!-- 签到表通过POST请求将签到姓名手机号提交到/sign_action/路径  -->
+                        <br>{{ hint }}     <!-- 用于显示签到成功或失败状态  -->
+                    </font>
+                </form>
+            </div>
+        </div>
+{% endblock %}
